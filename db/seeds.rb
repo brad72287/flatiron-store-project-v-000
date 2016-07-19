@@ -13,3 +13,5 @@ Item.all.each do |item|
   item.save
   counter += 1
 end
+
+user = User.create! :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'

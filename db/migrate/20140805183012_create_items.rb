@@ -5,6 +5,8 @@ class CreateItems < ActiveRecord::Migration
       t.integer :inventory
       t.integer :price
       t.references :category
+      t.references :cart
+      t.references :line_item
     end 
   end
 end
