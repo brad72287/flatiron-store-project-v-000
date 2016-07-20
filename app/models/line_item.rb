@@ -1,4 +1,4 @@
 class LineItem < ActiveRecord::Base
-  has_many :items
-  has_one :cart, through: :items
+  belongs_to :cart
+  belongs_to :item
 end

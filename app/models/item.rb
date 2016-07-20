@@ -1,4 +1,4 @@
 class Item < ActiveRecord::Base
-  belongs_to :carts
-  belongs_to :items
+  has_many :line_items
+  belongs_to :category
 end
