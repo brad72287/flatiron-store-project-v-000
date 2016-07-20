@@ -13,7 +13,5 @@ class Cart < ActiveRecord::Base
 
   def add_item(item_id)
   	@line_item = LineItem.find_or_initialize_by(item: Item.find(item_id), cart: self)
-  	#@line_item
-  	#line_items.build(item: Item.find(item_id))
   end
 end
