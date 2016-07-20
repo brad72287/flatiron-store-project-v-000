@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   has_many :carts 
   
   def current_cart
-    #return nil if carts.last.status == 'submitted'
     if carts.empty? 
       current_cart = Cart.create(user: self)
     else
+      return nil if carts.last.status == 'nilcart'
       carts.last
     end
   end
@@ -18,5 +18,6 @@ class User < ActiveRecord::Base
   def current_cart=(cart)
     #@cart = cart
     carts << cart unless cart.nil?
+    carts.last.update(status: 'nilcart') if cart.nil? && !carts.empty?
   end
 end

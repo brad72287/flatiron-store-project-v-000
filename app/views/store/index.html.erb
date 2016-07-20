@@ -1,4 +1,4 @@
-
+<%= link_to "Cart", cart_path(current_user.current_cart) unless current_user.nil? || current_user.carts.empty? %>
 
 <% @categories.each do |category| %>
   <%= link_to category.title, category_path(category) %><br>

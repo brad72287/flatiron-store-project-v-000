@@ -12,7 +12,7 @@ class CartsController < ApplicationController
   			foo.save 
   		end
   		former_cart = Cart.find(current_user.current_cart.id)
-  		current_user.current_cart = nil
+  		former_cart.update(status: "nilcart")
 		redirect_to former_cart
 	end
 end
